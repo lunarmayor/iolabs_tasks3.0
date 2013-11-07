@@ -15,7 +15,7 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
-
+gem 'compass-rails', github: 'Compass/compass-rails'
 gem 'chosen-rails'
 
 # Use SCSS for stylesheets
@@ -34,11 +34,12 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'rspec-rails'
 gem 'haml-rails'
-gem 'devise'
+gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+# Turbolinks makes following links in y our web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

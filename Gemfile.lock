@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/Compass/compass-rails.git
+  revision: aea69635f6000bbc7180f7fdd0ce216f904db30d
+  specs:
+    compass-rails (2.0.alpha.0)
+      compass (>= 0.12.2, < 0.14)
+
+GIT
   remote: git://github.com/anjlab/bootstrap-rails.git
   revision: addb7143365f97f938e3bdbb2ccfc52591230eda
   branch: 3.0.0
@@ -6,6 +13,17 @@ GIT
     anjlab-bootstrap-rails (3.0.0.rc2)
       railties (>= 3.0)
       sass (>= 3.2)
+
+GIT
+  remote: git://github.com/plataformatec/devise.git
+  revision: acefa2f7614673c7fd13c7c37a490e11288d75b4
+  specs:
+    devise (3.1.0)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
 
 GEM
   remote: https://rubygems.org/
@@ -36,14 +54,14 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.14)
-    bcrypt-ruby (3.0.1)
+    bcrypt-ruby (3.1.2)
     builder (3.1.4)
     chosen-rails (1.0.0)
       coffee-rails (>= 3.2)
       compass-rails (>= 1.0)
       railties (>= 3.0)
       sass-rails (>= 3.2)
-    chunky_png (1.2.8)
+    chunky_png (1.2.9)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.1)
@@ -59,12 +77,6 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    compass-rails (1.0.3)
-      compass (>= 0.12.2, < 0.14)
-    devise (1.5.4)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.0.3)
-      warden (~> 1.1)
     diff-lcs (1.2.4)
     erubis (2.7.0)
     execjs (2.0.1)
@@ -84,6 +96,9 @@ GEM
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (2.0.2)
+      jquery-rails
+      railties (>= 3.1.0)
     json (1.8.0)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -91,7 +106,7 @@ GEM
     mime-types (1.25)
     minitest (4.7.5)
     multi_json (1.8.0)
-    orm_adapter (0.0.7)
+    orm_adapter (0.4.0)
     paperclip (3.5.1)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -165,7 +180,7 @@ GEM
     uglifier (2.2.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    warden (1.2.1)
+    warden (1.2.3)
       rack (>= 1.0)
 
 PLATFORMS
@@ -175,10 +190,12 @@ DEPENDENCIES
   anjlab-bootstrap-rails!
   chosen-rails
   coffee-rails (~> 4.0.0)
-  devise
+  compass-rails!
+  devise!
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails
+  jquery-ui-rails
   paperclip
   pg
   rails (= 4.0.0)

@@ -1,0 +1,16 @@
+%h4 
+  Create new Client
+= form_for @client, multipart: true, remote: true do |f|
+  .form-group.client-form-group
+    %div
+      = f.text_field :name, placeholder: "name", class: "form-control"
+    %div
+      = f.text_area :address, placeholder: "address", class: "form-control"
+    %div
+      = f.text_field :contact_name, placeholder: "contact name", class: "form-control"
+    %div
+      = f.text_field :phone, placeholder: "phone number", class: "form-control"
+    %div
+      = f.text_field :email, placeholder: "email", class: "form-control"
+   
+  

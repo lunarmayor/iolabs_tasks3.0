@@ -1,0 +1,10 @@
+.note{id: "note-#{@note.id}", style: "display: none"}
+  %h5
+    = @note.author
+  .note-text
+    = simple_format h @note.text
+  .date
+    = @note.created_at.strftime("%b %d %Y")
+  - if @note.user_id == @me.id
+    = link_to @note, :method=>:delete, remote: true do
+      .glyphicon.glyphicon-remove

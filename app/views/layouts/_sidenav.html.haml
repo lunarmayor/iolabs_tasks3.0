@@ -1,0 +1,12 @@
+.col-sm-2.side-nav
+  %ul.nav
+    %li.text-center
+      = link_to "Me", user_path(@me)
+    %li.text-center
+      = link_to "Create Job", new_job_path, remote: true
+    %li.text-center
+      = link_to "Jobs", jobs_path
+    %li.text-center
+      = link_to "Team", users_path
+    %li.text-center
+      = link_to "Clients", clients_path

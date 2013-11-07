@@ -1,0 +1,82 @@
+= render template: "layouts/_sidenav.html.haml"
+.main-container
+  .col-sm-10
+    .col-sm-4.job-info
+      %h3
+        = @job.title
+      = form_for @job, remote: true, url: update_status_job_path(@job), class: "status-form" do |f|
+        = f.collection_select :status, @statuses, :to_s, :to_s, {value: @job.status}, class: "status-select form-control"
+      %hr
+      %div
+        = @job.description
+      %div
+        %span
+          Iolabs Due Date: 
+        %span
+          = Job.uncompact_date(@job.iolabs_due_date)
+      %div
+        %span
+          Client Due Date:
+        %span 
+          = Job.uncompact_date(@job.client_due_date)
+      %div
+        Client:
+        = link_to @client do
+          = @client.name
+      %hr
+      = link_to edit_job_path(@job) do
+        .glyphicon.glyphicon-pencil
+      = link_to @job, :method=>:delete do
+        .glyphicon.glyphicon-trash
+      %hr
+      %h5
+        New Note
+      = form_for @note, remote: true do |f|
+        = f.text_area :text, class: "form-control new-note"
+        = f.hidden_field :job_id, :value => @job.id 
+        = f.submit "post", class: "note-submit btn btn-default"
+
+    .col-sm-8
+      .job-assignment
+        .row
+          %hr
+        .row
+          .assign-to
+            assigned to:
+          - @users.each do |user|
+            %div
+              = link_to user do
+                = image_tag user.avatar.url, class: "img-circle img-responsive"
+        .row
+          %hr
+      .row
+        %h4.note-header
+          Notes
+        %hr
+        .notes-container
+          - @notes.each do |note|
+            .note{id: "note-#{note.id}"}
+              %h5
+                = note.author
+
+              .note-text
+                = simple_format h note.text
+              .date
+                = note.created_at.strftime("%b %d %Y")
+              - if note.user_id == @me.id
+                = link_to note, :method=>:delete, remote: true do
+                  .glyphicon.glyphicon-remove
+
+
+
+
+
+
+
+
+
+
+:javascript
+  $(".status-select").change(function () {
+    $("#edit_job_"+"#{j @job.id.to_s}").submit();
+  })

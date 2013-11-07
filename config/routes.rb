@@ -1,5 +1,17 @@
 IolabsTasks2::Application.routes.draw do
   devise_for :users
+  resources :users
+  resources :notes
+  resources :jobs do 
+    member do
+      patch "update_status"
+      post "update_status"
+      put "update_status"
+    end
+  end
+  resources :clients
+
+  root to: "users#show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

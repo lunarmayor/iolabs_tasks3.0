@@ -4,7 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_attached_file :avatar
+  has_many :jobs, through: :jobassignments
+  has_many :jobassignments
+
+  has_attached_file :avatar, :default_url => "/assets/missing.png"
 
   # Setup accessible (or protected) attributes for your model
 

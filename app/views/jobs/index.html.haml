@@ -1,0 +1,23 @@
+= render template: "layouts/_sidenav.html.haml"
+.main-container
+  .col-sm-10
+    %h3.job-title
+      Jobs
+    - ["new job", "in production", "completed/to be invoiced", "invoiced"].each do |status|
+      .col-sm-3.main-job-container
+        %h5
+          - if status == "completed/to be invoiced"
+            completed
+          -else
+            = status
+        %hr
+        - @jobs.where(status: status).order(:iolabs_due_date).each do |job|
+          = link_to job do
+            .job
+              .job-inner
+                = job.title
+                %br
+                %small.date
+                  = Job.uncompact_date(job.iolabs_due_date)
+            %hr.job-hr
+  

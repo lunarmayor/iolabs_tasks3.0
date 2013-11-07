@@ -1,0 +1,26 @@
+= render template: "layouts/_sidenav.html.haml"
+.main-container
+  .col-sm-10
+    .col-sm-4.col-sm-offset-1.new-job-form   
+      %h3
+        Edit Job
+      = form_for @job do |f|
+        .form-group
+          %div
+            = f.text_field :title, value: @job.title, id: "job-text-input", class: "form-control"
+          %br
+          %div
+            = f.text_area :description, value: @job.description, id: "job-text-area", class: "form-control"
+          %br
+          %div
+            = f.label :iolabs_due_date, "iolabs due date"
+            %br
+            = f.text_field :iolabs_due_date, value: Job.uncompact_date(@job.iolabs_due_date), class: "datepicker form-control"
+          %br
+          %div
+            = f.label :client_due_date, "client due date"
+            %br
+            = f.text_field :client_due_date, value: Job.uncompact_date(@job.client_due_date),class: "datepicker form-control"
+         
+          %br
+          = f.submit "Edit Job", class: "btn btn-default"

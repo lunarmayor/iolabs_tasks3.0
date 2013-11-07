@@ -1,0 +1,9 @@
+= render template: "layouts/_sidenav.html.haml"
+
+.main-container
+  - @users.each do |user|
+    .col-sm-2.col-xs-4.index-user
+      = link_to user do
+        = image_tag user.avatar.url, class: "img-responsive img-circle"
+        .text-center
+          = user.full_name

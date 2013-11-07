@@ -1,0 +1,9 @@
+= render template: "layouts/_sidenav.html.haml"
+
+.main-container
+  - @clients.each do |client|
+    .col-sm-2.col-xs-4.index-user
+      = link_to client do
+        = image_tag client.logo.url, class: "img-responsive img-circle"
+        .text-center
+          = client.name

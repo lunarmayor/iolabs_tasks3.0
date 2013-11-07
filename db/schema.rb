@@ -11,7 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130915180041) do
+ActiveRecord::Schema.define(version: 20131105051857) do
+
+  create_table "clients", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "contact_name"
+    t.string   "phone"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+  end
+
+  create_table "jobassignments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "job_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "jobs", force: true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.text     "description"
+    t.string   "status"
+    t.string   "iolabs_due_date"
+    t.string   "client_due_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "client_id"
+  end
+
+  create_table "notes", force: true do |t|
+    t.text     "text"
+    t.integer  "job_id"
+    t.integer  "user_id"
+    t.string   "author"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                              default: "", null: false

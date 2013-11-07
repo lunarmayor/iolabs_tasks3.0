@@ -1,0 +1,237 @@
+$main-color: #2F9E70
+
+$link-color: $main-color
+
+@import 'twitter/bootstrap'
+@import 'chosen'
+
+
+
+html
+  background-color: white
+  height: 100%
+
+body
+  background-color: white
+  height: 100%
+  color: $main-color 
+.main-container
+  height: 100%
+  overflow: auto
+
+p
+  color: $main-color
+
+
+.cog
+  color: white
+  &:hover
+    color: #eee * 0.75 
+  transition: color 1s
+
+.glyphicon-cog
+  font-size: 2em
+  top: 0.3em
+  margin-right: 1em
+
+
+.navbar
+  background-color: $main-color
+  border-radius: 0 
+  border-right: none
+  border-top: none
+  border-left: none
+  margin-bottom: 0
+  z-index: 10
+
+
+.navbar-brand
+  color: white !important
+  font-weight: 100
+  letter-spacing: 0.1em
+.sign-up, .sign-in
+  .container
+    margin-top: 0
+
+  h2
+    color: $main-color
+  div
+    margin-top: 1em
+  a
+    color: $main-color
+  .links
+    margin-top: 1em
+
+  input:focus 
+    outline: none
+    border-color: $main-color
+    box-shadow: 0.25px 0.25px 5px $main-color
+
+.form-control:focus 
+  outline: none !important
+  border-color: $main-color !important
+  box-shadow: 0.25px 0.25px 5px $main-color !important
+//show page
+
+.side-nav
+  background-color: #eeeeee
+  height: 100%
+  padding: 0
+  border-right: 1px solid $main-color
+  .nav
+    margin: 0
+    li
+      border-bottom: 1px solid $main-color
+      a
+        color: $main-color
+        transition: background-color 0.3s
+        &:hover
+          background-color: #eee * 0.93
+
+.av
+  .lead
+    margin-top: 1em
+img
+  margin-top: 1em
+  //border: 5px solid $main-color
+  padding: 4px
+  background-color: $main-color
+
+//index
+
+.index-user
+  a
+    text-decoration: none
+    color: $main-color
+    .text-center
+      margin-top: 1em 
+      margin-bottom: 1em
+
+
+//new job
+
+
+.client-form-group
+  div
+    margin-top: 1em
+
+@media (max-width: 768px)
+  .sign-up, .sign-in
+    .container
+      margin-left: 20%
+  .side-nav
+    text-align: center
+    height: 3em
+    .nav
+      li
+        display: inline-block
+        border-right: 1px solid $main-color
+        border-left: 1px solid $main-color
+        margin-right: 0 !important
+        a
+          margin-right: 0 !important
+  .av
+    text-align: center
+
+//client
+.client-info
+  div
+    margin-top: 1em
+.client-jobs
+  h5
+    margin-top: 2em
+
+
+//jobs
+.job
+  border: 0.5px solid $main-color
+  &:hover
+    background-color: #fff * 0.93
+  transition: background-color 0.3s
+ 
+  color: $main-color !important
+  text-decoration: none !important
+  padding-top: 0.5em
+  padding-bottom: 0.5em
+
+  .job-inner
+    margin-left: 1em
+.job-hr
+  margin: 0
+.date
+  color: grey
+  font-style: italic
+.main-job-container
+  hr
+    margin-bottom: 0
+hr
+  margin-bottom: 0
+.job-title
+  margin-left: 0.5em
+  margin-bottom: 1em
+
+a
+  &:hover
+    text-decoration: none !important
+
+
+//job show
+.job-assignment
+  .row
+    div
+      width: 10% !important
+      margin: 0.4em !important
+      display: inline-block
+    .assign-to
+      margin-right: 2em
+      width: 6em !important
+      position: relative
+      bottom: 1.8em
+      display: inline-block
+.job-info
+  div
+    margin-top: 1em
+  .status-select
+    width: 80%
+  hr
+    margin-right: 1em
+  h3
+    margin-bottom: 1em
+  h4
+    margin-top: 4em
+  h5
+    margin-top: 2em
+  .new-note
+    resize: none
+    width: 95%
+    height: 10em
+  .note-submit
+    margin-top: 1em
+
+
+  .glyphicon
+    font-size: 1.2em
+    margin-right: 0.5em
+.note-header
+  margin-top: 1em
+.note-text
+  p
+    color: black !important
+  margin-bottom: 1em
+.note
+  position: relative
+  background-color: #eee * 1.01
+  padding: 1em
+  padding-top: 0.3em
+  padding-bottom: 0.6em
+  border-top: 1px solid $main-color
+  %h5
+    margin-bottom: 3em
+.glyphicon-remove
+  position: absolute
+  right: 0.4em
+
+
+
+
+

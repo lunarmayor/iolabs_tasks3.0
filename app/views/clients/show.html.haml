@@ -1,0 +1,49 @@
+= render template: "layouts/_sidenav.html.haml"
+.main-container
+  .col-sm-10
+    .col-sm-3.client-info
+      %h3
+        = @client.name
+      = image_tag @client.logo.url, class: "img-circle img-responsive"
+
+      %h5
+        contact:
+      %div
+        = @client.contact_name
+      %div
+        = @client.address
+      %div
+        %a{href:"mailto:#{@client.email}"}
+          = @client.email
+      %div
+        = @client.phone
+    .col-sm-6.col-sm-offset-1.client-jobs
+      %h5
+        Active jobs
+      %hr
+      - @active_jobs.order(:iolabs_due_date).each do |job|
+        = link_to job do
+          .job
+            .job-inner
+              = job.title
+              %br
+              %small.date
+                = Job.uncompact_date(job.iolabs_due_date)
+          %hr.job-hr
+      %h5
+        Completed jobs
+      %hr
+      - @ended_jobs.order(:iolabs_due_date).each do |job|
+        = link_to job do
+          .job
+            .job-inner
+              = job.title
+              %br
+              %small.date
+                = Job.uncompact_date(job.iolabs_due_date)
+          %hr.job-hr
+
+
+
+
+  

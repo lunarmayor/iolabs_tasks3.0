@@ -1,0 +1,24 @@
+= render template: "layouts/_sidenav.html.haml"
+.main-container
+  .col-sm-10
+    .col-sm-3.col-xs-6.av
+      = image_tag @user.avatar.url, class: "img-circle img-responsive"
+      .lead.text-center
+        = @user.full_name
+    .col-sm-7.col-sm-offset-1
+      %h4
+        Active Jobs
+      - @jobs.each do |job|
+        = link_to job do
+          .job
+            .job-inner
+              = job.title
+              %br
+              %small.date
+                = Job.uncompact_date(job.iolabs_due_date)
+          %hr.job-hr
+
+
+
+  
+ 
