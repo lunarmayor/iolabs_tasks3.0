@@ -8,7 +8,7 @@ group :development do
   gem 'pg'
 end
 
-gem 'anjlab-bootstrap-rails',  "~> 3.0.2.0"
+gem 'anjlab-bootstrap-rails',  "~> 3.0.2.0", require: 'bootstrap-rails'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
