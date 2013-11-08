@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :jobs, through: :jobassignments
   has_many :jobassignments
 
-  has_attached_file :avatar, :default_url => ActionController::Base.helpers.asset_path("missing.png")
+  has_attached_file :avatar, :default_url => ActionController::Base.helpers.asset_path("assets/missing.png")
 
   # Setup accessible (or protected) attributes for your model
 
