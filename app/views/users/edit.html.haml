@@ -20,4 +20,7 @@
             = f.label :last_name
             %br/
             = f.text_field :last_name, value: @user.last_name, class: "form-control"
+          %div
+            = f.submit "update", class: "btn btn-default"
+
 
