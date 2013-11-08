@@ -128,6 +128,8 @@ img
         border-right: 1px solid $main-color
         border-left: 1px solid $main-color
         margin-right: 0 !important
+        float: left
+        width: 20%
         a
           margin-right: 0 !important
   .av
@@ -136,9 +138,31 @@ img
 
 @media (max-width: 500px)
   .nav
-    li, a
-      width: 10%
-      font-size: 0.9em
+    li
+      padding: 0
+      float: left
+      width: 20%
+      height: 100%
+      margin: 0
+      a 
+        padding: 0.7em !important
+        height: 100%
+        vertical-align: center
+        font-size: 0.9em
+
+
+@media (max-width: 350px)
+  .nav
+    li
+      padding: 0
+      float: left
+      width: 20%
+      margin: 0
+      a 
+        padding-top: 1em
+        padding-bottom: 1em
+        vertical-align: center
+        font-size: 0.75em
 
 //client
 .client-info

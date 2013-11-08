@@ -5,7 +5,7 @@ gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
 group :development do 
-  gem 'pg'
+  gem 'sqlite3'
 end
 
 gem 'anjlab-bootstrap-rails',  "~> 3.0.2.0", require: 'bootstrap-rails'
