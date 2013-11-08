@@ -69,6 +69,15 @@ IolabsTasks2::Application.configure do
   # the I18n.default_locale when a translation can not be found).
   config.i18n.fallbacks = true
 
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'iolabs',
+      :access_key_id => 'AKIAIMVHDSCRCMRFY5AA',
+      :secret_access_key => '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'
+    }
+  }
+
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 

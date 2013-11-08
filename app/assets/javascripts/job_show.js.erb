@@ -1,0 +1,4 @@
+$(".status-select").change(function () {
+  $("#edit_job_"+"<%= j @job.id.to_s%>").submit();
+  $(".main-container").html("<%= j render template: 'jobs/show.html.haml'%>");
+})
