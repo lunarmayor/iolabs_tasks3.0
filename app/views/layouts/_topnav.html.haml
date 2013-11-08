@@ -3,9 +3,9 @@
     iolabs
     · task manager
 
-  %li.pull-right{style: "color: white !important"}
-    = link_to "Sign out", destroy_user_session_path, method: :delete
-  %li.pull-right{style: "color: white !important"}
-    = link_to "Edit Profile", edit_user_url(@me.id)
+  %span.pull-right{style: "color: white !important"}
+    = link_to "Sign out", destroy_user_session_path, method: :delete, html: {style: "color: white !important"}
+  %span.pull-right{style: "color: white !important"}
+    = link_to "Edit Profile", edit_user_url(@me.id), html: {style: "color: white !important"}
         
     
