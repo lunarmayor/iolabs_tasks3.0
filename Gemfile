@@ -8,9 +8,7 @@ group :development do
   gem 'pg'
 end
 
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-                              :github => 'anjlab/bootstrap-rails',
-                              :branch => '3.0.0'
+gem 'anjlab-bootstrap-rails',  "~> 3.0.2.0"
 group :production do
   gem 'pg'
   gem 'rails_12factor'
