@@ -1,0 +1,24 @@
+= render template: "layouts/_sidenav.html.haml"
+.main-container
+  .col-sm-10
+    .col-sm-4.col-sm-offset-1.new-job-form   
+      %h3
+      = form_for @user, multipart: true do |f|
+        = devise_error_messages!
+        .form-group
+          %div
+            = f.label :email
+            %br/
+            = f.email_field :email, value: @user.email, class: "form-control"
+          %div
+            = f.label :first_name
+            %br/
+            = f.text_field :first_name, value: @user.first_name, class: "form-control"
+          %div
+            = f.label :avatar
+            = f.file_field :avatar, class: "form-control"
+          %div
+            = f.label :last_name
+            %br/
+            = f.text_field :last_name, value: @user.last_name, class: "form-control"
+
