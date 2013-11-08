@@ -31,6 +31,7 @@ class JobsController < ApplicationController
   end
 
   def new
+  	
   	@users = User.all
   	@users << User.new({last_name: "all", id: 0})
   	@clients = Client.all
