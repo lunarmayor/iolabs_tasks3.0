@@ -17,6 +17,12 @@
           = @client.email
       %div
         = @client.phone
+      %hr
+      = link_to edit_client_path(@client) do
+        .glyphicon.glyphicon-pencil
+      = link_to @client, :method=>:delete do
+        .glyphicon.glyphicon-trash
+      %hr
     .col-sm-6.col-sm-offset-1.client-jobs
       %h5
         Active jobs

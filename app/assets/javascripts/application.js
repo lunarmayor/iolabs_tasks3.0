@@ -15,7 +15,15 @@
 //= require jquery.ui.all
 //= require turbolinks
 //= bootstrap
+//= main.js.coffee
 //= bootstrap-datepicker
 
 //= require chosen-jquery
 //= require_tree .
+
+
+$(document).ready(function(){
+	$('.cog').on('click', function(){
+		$('.options').toggleClass('hidden');
+	})
+})

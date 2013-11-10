@@ -1,0 +1,25 @@
+= render template: "layouts/_sidenav.html.haml"
+.main-container#edit
+  .col-sm-10
+    .col-sm-7
+      %h4 
+        Edit
+        = @client.name
+      = form_for @client, multipart: true do |f|
+        .form-group.client-form-group
+        %div
+          = f.text_field :name, value: @client.name, class: "form-control"
+        %div
+          = f.text_area :address, value: @client.address, class: "form-control"
+        %div
+          = f.text_field :contact_name, value: @client.contact_name, class: "form-control"
+        %div
+          = f.text_field :phone, value: @client.phone, class: "form-control"
+        %div
+          = f.text_field :email, value: @client.email, class: "form-control"
+        %div
+          = f.file_field :logo, class: "form-control"
+        %div
+          = f.submit "Update Client", class: "btn btn-default"
+   
+  
