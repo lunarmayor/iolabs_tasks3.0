@@ -12,5 +12,56 @@
       = link_to "Clients"
 
 .col-sm-10
-  .col-sm-4.col-sm-offset-1.new-job-form
-   
+  .col-sm-4.col-sm-offset-1.new-job-form   
+    %h3
+      Create Job
+    = form_for @job do |f|
+      .form-group
+        %div
+          = f.text_field :title, placeholder: "title", id: "job-text-input", class: "form-control"
+        %br
+        %div
+          = f.text_area :description, placeholder: "description", id: "job-text-area", class: "form-control"
+        %br
+        %div
+          = f.label :iolabs_due_date, "iolabs due date"
+          %br
+          = f.text_field :iolabs_due_date, class: "datepicker form-control"
+        %br
+        %div
+          = f.label :client_due_date, "client due date"
+          %br
+          = f.text_field :client_due_date, class: "datepicker form-control"
+        %br
+        %div
+          = f.label :user_id, "assign to:"
+          = f.collection_select(:user_id, @users, :id, :last_name, {}, {multiple: true, id: "job-collection-select", class: 'job_user_select form-control', :"data-placeholder" => "assign users"})
+        %br
+        .field
+          = f.label :client_id, "client:"
+          = f.collection_select :client_id, @clients, :id, :name,{}, {id: "client-collection-select", class: "form-control"}
+         
+        %br
+        .client-form-container
+        = f.submit "Create Job", class: "btn btn-default"
+
+
+
+:javascript
+  $("#client-collection-select").change(function () {
+    var str = "";
+    $("#client-collection-select option:selected").each(function () {
+        str = $(this).text();
+        console.log(str);
+      });
+    if(str === "new client"){
+      $(".client-form-container").html("#{j render template: 'clients/_new.html.haml'}");
+    
+    } else {
+    $(".client-form-container").html("");
+    
+      };
+    })
+  $("#client-collection-select option:selected").trigger('change');
+  $(".datepicker").datepicker();
+  $(".job_user_select").chosen({width: '220px'});
